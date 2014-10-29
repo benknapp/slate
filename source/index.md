@@ -9,7 +9,7 @@ language_tabs:
 toc_footers:
   - Have Questions? <br><a href='http://github.com/GRESB/api-docs/issues'>Open an Issue on Github</a>
 
-  - or contact <a href='mailto:u.scharf@gresb.com'>info@gresb.com</a>
+  - or contact <a href='mailto:u.scharf@gresb.com'>u.scharf@gresb.com</a>
 
   - <a href='http://github.com/tripit/slate' style='position:absolute; bottom:5px;'>Documentation Powered by Slate</a>
 
@@ -151,7 +151,6 @@ Content-Type: application/json
 ```
 
 
-
 After authentication, you will receive a list of funds/companies associated with your account, each with a survey response ID.  The response IDs apply to the current response period.  You can access your account’s companies/funds and response IDs at any point using the method below.
 
 <table>
@@ -212,6 +211,7 @@ Content-Type: application/json
 {
   "object": "list",
   "has_more": false,
+  "data": [
    {
 	"building_id":2355745342,
 	"partner’s identifier": "asset 1",
@@ -251,6 +251,7 @@ Content-Type: application/json
 {
   "object": "list",
   "has_more": false,
+  "data": [
    {
 	"building_id":2355745342,
 	"partner’s identifier": "asset 1",
@@ -307,7 +308,7 @@ $ curl https://api.gresb.com/api/responses/2315/asset_level_data \
 -u *auth key*: \ 
 -X PUT \
 -H "Content-Type: application/json" \
--d { 
+-d [ 
       {
 	"building_id": 5756453454,
 	"partner's_identifier": "asset 44",
@@ -330,7 +331,7 @@ $ curl https://api.gresb.com/api/responses/2315/asset_level_data \
 	"EN_DWH_MAN_BCF_TOT2014": 96783,
 	"EN_DWH_MAN_BCD_ABS2013": 678865,
        }
-}
+]
 
 
 ```
@@ -341,7 +342,7 @@ Host: api.gresb.com
 Content-Type: application/json
 Accept: application/json
 Authorization: *example key*
-{ 
+[ 
 	{
 	"building_id": 5756453454,
 	"partner's_identifier": "asset 44",
@@ -364,7 +365,7 @@ Authorization: *example key*
 	"EN_DWH_MAN_BCF_TOT2014": 96783,
 	"EN_DWH_MAN_BCD_ABS2013": 678865,
 	}
-}
+]
 ```
 
 **PUT**
@@ -402,7 +403,7 @@ $ curl https://api.gresb.com/api/responses/2315/asset_level_data \
 -u *auth key*: \ 
 -X POST \
 -H "Content-Type: application/json" \
--d {
+-d [
       {
 	"partner's_identifier": "asset 44",
 	"asset_name": "Another Building",
@@ -423,7 +424,7 @@ $ curl https://api.gresb.com/api/responses/2315/asset_level_data \
 	"EN_DWH_MAN_BCF_TOT2014": 96783,
 	"EN_DWH_MAN_BCD_ABS2013": 678865,
        }
-}
+]
 ```
 
 
@@ -433,7 +434,7 @@ Host: api.gresb.com
 Content-Type: application/json
 Accept: application/json
 Authorization: *example key*
-{
+[
 	{
 	"partner's_identifier": "asset 44",
 	"asset_name": "Another Building",
@@ -454,7 +455,7 @@ Authorization: *example key*
 	"EN_DWH_MAN_BCF_TOT2014": 96783,
 	"EN_DWH_MAN_BCD_ABS2013": 678865,
 	}
-}
+]
 ```
 
 **POST**
